@@ -8,6 +8,7 @@
 	        <field name="arch" type="xml">
               <field name="website" position="before">
                   <field name="encargado_contrato_id"/>
+                  <field name="nombre_notario"/>
               </field>
 
 	        </field>

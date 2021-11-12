@@ -32,7 +32,7 @@
                                 Identificación con Código Único de Identificación número <span t-esc="dpi_l"/> (<span t-esc="o.company_id.encargado_contrato_id.identification_id"/>)
                                 extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de Gerente General y Representante Legal de la entidad
                                 <strong><u><span t-esc="o.company_id.name"/></u></strong>,lo cual acredito con el Acta Notarial que contiene mi nombramiento faccionada en esta ciudad capital
-                                de Guatemala, el día dieciocho de junio de dos mil ocho, por el Notario Leonel Enrique Chinchilla Recinos y que quedo inscrito en el Registro Mercantil General
+                                de Guatemala, el día dieciocho de junio de dos mil ocho, por el Notario <span t-esc="o.company_id.nombre_notario"/> y que quedo inscrito en el Registro Mercantil General
                                 de la República, bajo el número doscientos noventa y cuatro mil ciento seis (294106), folio ciento catorce (114), del libro doscientos veintiuno (221), de Auxiliares
                                 de Comercio con fecha dieciocho de junio del dos mil ocho; y por la otra parte, <strong><u><span t-esc="o.employee_id.name"/></u></strong> de <span t-esc="edad_empleado_l"/>
                                 de edad, <span t-esc="estado_civil_empleado"/>, con residencia en <span t-esc="o.employee_id.residencia_letras"/>,me identifico con el Documento Personal de Identificación
@@ -45,7 +45,14 @@
                                   según las necesidades del proyecto y que, de manera enunciativa y no limitativa, son los siguientes:
                             </p>
                             <p style="text-align:justify;font-size:14pt;"><strong>ATRIBUCIONES: </strong></p>
-                            <p style="padding-left:1cm;font-size:14pt;"><span t-field="o.job_id.description"/></p>
+                            <p style="padding-left:1cm;font-size:14pt;">
+                              <t t-if="o.notes">
+                                  <span t-field="o.notes"/>
+                              </t>
+                              <t t-else="">
+                                  <span t-field="o.job_id.description"/>
+                              </t>
+                            </p>
                             <p style="text-align:justify;font-size:14pt;">
                               El TRABAJADOR cumplirá con las obligaciones propias de su cargo, las establecidas en el Código de Trabajo, el Reglamento Interior de Trabajo y demás disposiciones legales y reglamentarias de la materia.
                               Dentro de las responsabilidades del TRABAJADOR se encuentran la adecuada planificación de sus actividades para asegurar la terminación efectiva de las tareas diarias.  Asimismo, de forma especial se conviene que el TRABAJADOR será
