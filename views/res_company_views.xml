@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+
+        <record id="adcosine_view_company_form" model="ir.ui.view">
+            <field name="name">adcosine.res.company.form</field>
+            <field name="model">res.company</field>
+	        <field name="inherit_id" ref="base.view_company_form"/>
+	        <field name="arch" type="xml">
+              <field name="website" position="before">
+                  <field name="encargado_contrato_id"/>
+              </field>
+
+	        </field>
+	    </record>
+
+  </data>
+</odoo>

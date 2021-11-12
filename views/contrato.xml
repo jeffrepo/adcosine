@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="contrato">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article">
+                    <div class="header">
+                        <div class="centro" style="margin: 0 auto;">
+                            <p style="text-align:center;font-size:14pt;">
+                                <b>CONTRATO INDIVIDUAL DE TRABAJO</b><br/><br/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <t t-set="edad_l" t-value="edad_letras(o.company_id.encargado_contrato_id.edad)"/>
+                        <t t-set="edad_empleado_l" t-value="edad_letras(o.employee_id.edad)"/>
+                        <t t-set="estado_civil_encargado" t-value="estado_civil(o.employee_id.marital)"/>
+                        <t t-set="sueldo_letras" t-value="sueldo_a_letras(o.wage)"/>
+                        <t t-set="bono_letras" t-value="sueldo_a_letras(o.bonificacion_incentivo)"/>
+                        <t t-set="fecha_l" t-value="fecha_letras_hoy()"/>
+                        <t t-set="estado_civil_empleado" t-value="estado_civil(o.company_id.encargado_contrato_id.marital)"/>
+
+                        <t t-set="dpi_l" t-value="dpi_letras(o.company_id.encargado_contrato_id.identification_id)"/>
+                        <t t-set="dpi_empleado_l" t-value="dpi_letras(o.employee_id.identification_id)"/>
+                        <t t-set="fecha_contrato_letras" t-value="fecha_letras(o.date_start)"/>
+
+                        <div class="centro" style="margin: 0 auto;">
+                            <p style="text-align:justify;font-size:14pt;">
+                                <strong><u>NOSOTROS:</u></strong> Por una parte <strong><u><span t-esc="o.company_id.encargado_contrato_id.name"/></u></strong>, de <span t-esc="edad_l"/> de edad, <span t-esc="estado_civil_empleado"/>, <span t-esc="o.company_id.encargado_contrato_id.name"/>, guatemalteco.
+                                 Empresario, de este domicilio y vecino del Municipio de <span t-esc="o.company_id.encargado_contrato_id.address_home_id.city"/>, me identifico con el Documento Personal de
+                                Identificación con Código Único de Identificación número <span t-esc="dpi_l"/> (<span t-esc="o.company_id.encargado_contrato_id.identification_id"/>)
+                                extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de Gerente General y Representante Legal de la entidad
+                                <strong><u><span t-esc="o.company_id.name"/></u></strong>,lo cual acredito con el Acta Notarial que contiene mi nombramiento faccionada en esta ciudad capital
+                                de Guatemala, el día dieciocho de junio de dos mil ocho, por el Notario Leonel Enrique Chinchilla Recinos y que quedo inscrito en el Registro Mercantil General
+                                de la República, bajo el número doscientos noventa y cuatro mil ciento seis (294106), folio ciento catorce (114), del libro doscientos veintiuno (221), de Auxiliares
+                                de Comercio con fecha dieciocho de junio del dos mil ocho; y por la otra parte, <strong><u><span t-esc="o.employee_id.name"/></u></strong> de <span t-esc="edad_empleado_l"/>
+                                de edad, <span t-esc="estado_civil_empleado"/>, con residencia en <span t-esc="o.employee_id.residencia_letras"/>,me identifico con el Documento Personal de Identificación
+                                con Código Único de Identificación número <span t-esc="dpi_empleado_l"/> extendido por el Registro Nacional de las Personas de la República de Guatemala; Quienes en lo
+                                sucesivo nos denominaremos, como <strong><u>“EMPLEADOR”</u></strong> y <strong><u>“TRABAJADOR”</u></strong>, respectivamente, consentimos en celebrar el presente
+                                 <strong><u>CONTRATO INDIVIDUAL DE TRABAJO</u></strong>, contenido en las siguientes cláusulas: <strong><u>PRIMERA: DE LA RELACIÓN DE TRABAJO:</u></strong> La relación de trabajo se inicia
+                                 el <span t-esc="fecha_contrato_letras['dia_letras']"/> de <span t-esc="fecha_contrato_letras['mes_letras']"/> del <span t-esc="fecha_contrato_letras['anio_letras']"/>
+                                 <strong><u>SEGUNDA: </u></strong> El TRABAJADOR ocupará el puesto de: <strong><u><span t-esc="o.job_id.name"/></u></strong>, y le corresponde prestar los servicios
+                                  inherentes al cargo, y por el puesto que ocupará, se le considerará de conformidad con el Código de Trabajo como Empleada de Confianza, cuyas funciones podrán variar
+                                  según las necesidades del proyecto y que, de manera enunciativa y no limitativa, son los siguientes:
+                            </p>
+                            <p style="text-align:justify;font-size:14pt;"><strong>ATRIBUCIONES: </strong></p>
+                            <p style="padding-left:1cm;font-size:14pt;"><span t-field="o.job_id.description"/></p>
+                            <p style="text-align:justify;font-size:14pt;">
+                              El TRABAJADOR cumplirá con las obligaciones propias de su cargo, las establecidas en el Código de Trabajo, el Reglamento Interior de Trabajo y demás disposiciones legales y reglamentarias de la materia.
+                              Dentro de las responsabilidades del TRABAJADOR se encuentran la adecuada planificación de sus actividades para asegurar la terminación efectiva de las tareas diarias.  Asimismo, de forma especial se conviene que el TRABAJADOR será
+                              responsable de la observancia de las medidas de seguridad en el trabajo establecidas en las políticas de la entidad, así como del uso y cuidado del equipo, herramienta, productos y cualquier otro material que le sea entregado para desempeñar sus funciones, asimismo,  se conviene que, el TRABAJADOR será responsable por las sumas de dinero y/o producto a que tenga acceso por virtud de su cargo, correspondiéndole responder por cualquier faltante.
+                            </p>
+                            <p style="text-align:justify;font-size:14pt;">
+                              EL TRABAJADOR puede ser trasladada de un puesto a otro de la misma índole, rama o categoría, sin que esto constituya despido indirecto, siempre y cuando las condiciones de la prestación de servicios y necesidades de la
+                              entidad así lo requieran. <strong><u>TERCERA: DEL LUGAR DE PRESTACIÓN DE LOS SERVICIOS: </u></strong> Los servicios serán prestados en la sexta avenida catorce guion cincuenta y cinco zona uno, Departamento de Guatemala, o en sus  diferentes tiendas o sucursales, cuya ubicación es de conocimiento del trabajador o en cualquiera lugar que
+                              indique el patrono.  <strong><u>CUARTA: PLAZO DEL CONTRATO: </u></strong> La duración del presente contrato es por tiempo indefinido.  <strong><u>QUINTA: JORNADA DE TRABAJO: </u></strong> La trabajadora no se encuentra sujeto a las limitaciones de la jornada de trabajo, de conformidad con el artículo 124, literales a), y, b), respectivamente del Código de Trabajo. Por lo que laborará
+                              turnos de doce horas diarias, en jornada Mixta de las nueve horas, a las veinte horas, según la programación que establezca el patrono y que le será notificada con anticipación. Es entendido que de conformidad con dicho articulo, la jornada de este no puede exceder de un total de doce horas diarias.
+                            </p>
+                            <p style="text-align:justify;font-size:14pt;">
+                              El TRABAJADOR gozará de una hora de descanso, dentro de esa jornada, de acuerdo a la planificación que al respecto realizara el EMPLEADOR y que le comunicara con la debida anticipación, con el objeto  de no interrumpir las actividades de la entidad, el que debe computarse como tiempo de trabajo efectivo.
+                            </p>
+                            <p style="text-align:justify;font-size:14pt;">
+                              Se considerará jornada extraordinaria aquella que tenga lugar fuera del horario establecido para la jornada ordinaria y que, además, sea autorizada por el empleador de conformidad con sus procedimientos administrativos internos y el Reglamento Interno de Trabajo; el pago de las horas correspondientes a la jornada extraordinaria se efectuará de conformidad con la ley (Artículo 121 Código de Trabajo).
+                              En cualquier caso, no se considerarán horas extraordinarias las que el TRABAJADOR ocupe para subsanar errores imputables sólo a ella cometidos durante la jornada ordinaria, ni las que sean consecuencia de su falta de actividad durante la jornada, imputable a ella.
+                            </p>
+                            <p style="text-align:justify;font-size:14pt;">
+                                <strong><u>SEXTA: DEL SALARIO Y FORMA DE PAGO:</u></strong> El salario ordinario será de <span t-esc="sueldo_letras"/> quetzales exactos (<span t-field="o.wage"/>)
+                                mensuales y será pagado en moneda de curso legal el último día de cada mes, mediante cheque bancario nominativo, efectivo, medios electrónicos o depósito en cuenta personal de el TRABAJADORA en una entidad bancaria; en el caso de que el día de pago sea inhábil el pago se efectuará el día hábil anterior o posterior. Adicionalmente, el <strong>EMPLEADOR</strong> pagará a el TRABAJADOR, en concepto de Bonificación Incentivo contenida en el Decreto 78-89 del Congreso de la República y sus reformas, una suma de <span t-esc="bono_letras"/> quetzales exactos (<span t-field="o.bonificacion_incentivo"/>) en las mismas condiciones de forma y tiempo pactadas para el pago del salario ordinario. <strong><u>SÉPTIMA: DÍAS DE ASUETO Y SÉPTIMOS DÍAS:</u></strong> Las horas extras, el séptimo y los días de asueto, le serán  pagados de conformidad con los 121, 126, 127 del
+                                Código de Trabajo. <strong><u>OCTAVA:</u></strong> Es entendido que de conformidad con el artículo 122 del Código de Trabajo, la jornada ordinaria y extraordinaria no puede exceder de una suma total de doce horas diarias.  <strong><u>NOVENA: DE LA CONFIDENCIALIDAD:</u></strong> Toda información o material, de carácter técnico y estratégico y de cualquier naturaleza, generada para
+                                el EMPLEADOR será considerada como confidencial y propiedad del EMPLEADOR; en consecuencia, el TRABAJADOR se obliga a mantener en confidencia toda la información o material a que tenga acceso por razón de su cargo, dentro de la prestación de sus servicios, por las relaciones personales que establezca durante la vigencia de este contrato y por cualquier otra circunstancia,
+                                comprendiendo dicha “información”, de manera enunciativa y no exclusiva o limitativa,  todos aquellos datos, escritos o no escritos, digitales, electrónicos, impresos o no, relacionados con clientes y/o trabajadores de la entidad y/o cualquier otra entidad con quien el patrono tenga relaciones comerciales y con cualquiera otra situación interna del empleador relacionada
+                                con el sistema administrativo del mismo; programas de software en cualquier etapa de desarrollo y documentación relacionada con los mismos que se implementen dentro de la Compañía para cualquier propósito; especificaciones técnicas, especialmente la información relacionada con los productos con los que el patrono comercialice, metodología, “know how” (conocimientos y experiencia),
+                                organigramas, materiales de entrenamiento, planillas, identidades de clientes, cuentas de clientes, propuestas a clientes, reportes y datos internos de la entidad y sus integrantes, sea cual fuere su naturaleza; métodos comerciales, estrategias y planes, finanzas, documentos y archivos contables; y cuantas operaciones e información se encuentran relacionadas con la entidad misma,
+                                su actividad, los empleados y los clientes.  En virtud de la obligación de confidencialidad, el TRABAJADOR tiene prohibido, salvo autorización escrita del patrono:  a) revelar, informar, publicar, divulgar o transferir, directa o indirectamente, por cualquier medio, la información a que tenga acceso a cualesquiera personas, individuales o jurídicas, nacionales o extranjeras,
+                                para cualquier propósito; b) utilizar la información que obtenga en el ejercicio de su cargo para propósitos distintos a la fiel y exacta prestación de sus servicios; c) remover, reproducir, resumir, alterar, mutilar o copiar cualquiera información o material de la entidad empleadora. La TRABAJADOR está advertida de la responsabilidad penal en que pudiere incurrir si incumple
+                                con lo dispuesto en esta cláusula, de conformidad con lo establecido en los artículos 274”A”, 274”B”, 274”C”, 274”D”, 274”E”, 274”F”, 274”G”, 275 del Código Penal y cualquiera otra disposición aplicable. <strong><u> DÉCIMA: DE LA LEALTAD: </u></strong> El TRABAJADOR se obliga a no usar para su beneficio personal toda información confidencial de naturaleza comercial o mercantil
+                                relacionada con el patrono, especialmente la información a que se hace referencia en la cláusula anterior. <strong><u>DÉCIMA PRIMERA: PROHIBICIONES ESPECIALES:</u></strong> De conformidad con lo dispuesto en el Capítulo VII, del Título VI, del Libro Segundo del Código Penal, sin perjuicio de la responsabilidad penal en que incurra, a el TRABAJADOR le queda prohibido: a) destruir, borrar o de cualquier
+                                modo inutilizar registros informáticos; b) Alterar, borrar o de cualquier modo inutilizar las instrucciones o programas que utilizan las computadoras; c) Copiar o de cualquier modo reproducir las instrucciones o programas de computación, sin autorización del autor; d) Crear un banco de datos o un registro informático con datos que puedan afectar  la intimidad de las personas;
+                                e) Utilizar registros informáticos o programas de computación para ocultar, alterar o distorsionar información requerida para una actividad comercial, para el cumplimiento de una obligación respecto al Estado o para ocultar, falsear o alterar los estados contables o la situación patrimonial de una persona física o jurídica; f) Utilizar los registros informáticos de otro, o ingresar, por cualquier medio, a su banco de datos o archivos electrónicos, sin autorización; y g) Destruir o poner en circulación programas o instrucciones destructivas, que puedan causar perjuicio a los registros, programas o equipos de computación. El incumplimiento de cualesquiera de las prohibiciones antes citadas, constituirá causal directa de despido, sin responsabilidad del EMPLEADOR. <strong><u>DÉCIMA SEGUNDA: DE LA TERMINACIÓN DEL CONTRATO: </u></strong>
+                                De conformidad con lo dispuesto en el Capítulo VIII, Título II del Código de Trabajo, el presente contrato se tendrá por terminado en virtud de las siguientes causas: a) mutuo consentimiento; b) renuncia; c) despido, el cual, a su vez, puede ser directo, con o sin causa justificada; y d) las demás formas dispuestas en la ley.  Constituyen causas justas que facultan al patrono para dar
+                                por terminado el contrato de trabajo, sin responsabilidad de su parte, las contenidas en el artículo 77 del Código de Trabajo y, con base en la literal k) de dicho artículo, las siguientes:  a) cuando a el TRABAJADOR viole lo dispuesto en la cláusula décima del presente contrato relativa a su obligación de confidencialidad; b) cuando el TRABAJADOR viole lo dispuesto en la cláusula
+                                undécima del presente contrato en relativa a su obligación de lealtad; c) cuando el TRABAJADOR  viole lo dispuesto en la cláusula décima tercera del presente contrato relativa a su obligación de exclusividad y no competencia; d) cuando el TRABAJADOR viole lo dispuesto en la cláusula décima cuarta del presente contrato relativa a las prohibiciones especiales; e) si el TRABAJADOR
+                                cometiere algún delito o falta en contra del patrimonio de su patrono, sus compañeros de trabajo y de un tercero en el interior del lugar de trabajo o propiciare relaciones fuera de lo estrictamente laboral-profesional dentro de la empresa; f) cualquiera otra causal que el EMPLEADOR invoque por incumplimiento del presente contrato y sus anexos o las obligaciones principales contenidas
+                                en la legislación laboral y sus reglamentos.  En todo caso, el EMPLEADOR tiene el derecho de promover las acciones penales y civiles que estime pertinentes derivado de la actuación de el TRABAJADOR. <strong><u>DÉCIMA TERCERA:</u></strong> El presente contrato individual de trabajo se suscribe en <span t-field="o.job_id.company_id.street"/>, el <span t-esc="fecha_l"/>.
+                            </p>
+                            <br   />
+                            <p>
+                              <table style="margin: 0px auto;font-size:14pt;">
+                                  <tr>
+                                      <td><div align="center">_____________________<br/>Empleador.</div></td>
+                                      <td style="width:2cm"></td>
+                                      <td><div align="center">_____________________<br/>Trabajador.</div></td>
+                                      <td style="width:2cm"></td>
+                                      <td><div align="center">_____________________<br/>Huella</div></td>
+
+                                  </tr>
+                              </table>
+                            </p>
+                        </div>
+                        <!-- <t t-set="mes" t-value="mes_letras(o.date_from)"/>
+                        <t t-set="dias_trabajados" t-value="0"/>
+                        <t t-foreach="o.worked_days_line_ids" t-as="linea">
+                            <t t-if="linea.code == 'DIAS' ">
+                                <t set="dias_trabajados" t-value="linea.number_of_days"/>
+                            </t>
+                        </t> -->
+
+                    </div>
+                    <div class="footer">
+                      <div style="margin: 0 auto;">
+                         <center><span class="page" /></center>
+                      </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
