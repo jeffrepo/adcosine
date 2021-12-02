@@ -7,13 +7,25 @@
 	        <field name="inherit_id" ref="base.view_company_form"/>
 	        <field name="arch" type="xml">
               <field name="website" position="before">
-                  <field name="encargado_contrato_id" string="Representante lega"/>
+                  <!-- <field name="encargado_contrato_id" string="Representante lega"/> -->
                   <field name="nombre_notario"/>
                   <field name="numero_registro_mercantil"/>
                   <field name="folio"/>
                   <field name="libro"/>
               </field>
+              <notebook position="inside">
+                  <page string="Contratos">
+                      <group string="Encargado contrato">
+                          <field name="colegio"/>
+                          <field name="nombre_encargado"/>
+                          <field name="edad_encargado"/>
+                          <field name="estado_civil_encargado"/>
+                          <field name="dpi_encargado"/>
+                          <field name="direccion_encargado"/>
+                      </group>
 
+                  </page>
+              </notebook>
 	        </field>
 	    </record>
 

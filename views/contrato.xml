@@ -27,7 +27,7 @@
 
                         <div class="centro" style="margin: 0 auto;">
                             <p style="text-align:justify;font-size:14pt;">
-                                <strong><u>NOSOTROS:</u></strong> Por una parte <strong><u><span t-esc="o.company_id.encargado_contrato_id.name"/></u></strong>, de <span t-esc="edad_l"/> de edad, <span t-esc="estado_civil_empleado"/>, <span t-esc="o.company_id.encargado_contrato_id.name"/>, guatemalteco.
+                                <strong><u>NOSOTROS:</u></strong> Por una parte <strong><u><span t-esc="o.company_id.nombre_encargado"/></u></strong>, de <span t-esc="o-company_id.edad_encargado"/> de edad, <span t-esc="o.company_id.estado_civil_encargado"/>, guatemalteco.
                                  Empresario, de este domicilio y vecino del Municipio de <span t-esc="o.company_id.encargado_contrato_id.address_home_id.city"/>, me identifico con el Documento Personal de
                                 Identificación con Código Único de Identificación número <span t-esc="dpi_l"/> (<span t-esc="o.company_id.encargado_contrato_id.identification_id"/>)
                                 extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de Gerente General y Representante Legal de la entidad
