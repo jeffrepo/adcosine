@@ -12,6 +12,7 @@ class res_company(models.Model):
     nombre_notario = fields.Char('Nombre notario')
     # SI es colegio otro formato
     colegio = fields.Boolean('Colegio')
+    direccion_letras = fields.Char('Direccion letras')
     nombre_encargado = fields.Char('Nombre encargado')
     edad_encargado = fields.Integer('Edad')
     estado_civil_encargado = fields.Char('Estado civil')

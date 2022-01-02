@@ -17,6 +17,7 @@
                   <page string="Contratos">
                       <group string="Encargado contrato">
                           <field name="colegio"/>
+                          <field name="direccion_letras"/>
                           <field name="nombre_encargado"/>
                           <field name="edad_encargado"/>
                           <field name="estado_civil_encargado"/>
