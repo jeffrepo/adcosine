@@ -17,4 +17,4 @@ class hr_contract(models.Model):
     _inherit = 'hr.contract'
 
     puesto_contrato = fields.Char('Puesto de contrato')
-    vigencia_letras = fields.char('Vigencia letras')
+    vigencia_letras = fields.Char('Vigencia letras')
