@@ -72,7 +72,7 @@ class ReportContrato(models.AbstractModel):
             logging.warn(decena)
             decena_letras = a_letras.num_a_letras(decena,completo=False)
             unidad_letras = a_letras.num_a_letras(unidad,completo=False)
-            letras = decena_letras + ' y ' + unidad_letras
+            letras = decena_letras
         return letras
 
     def estado_civil(self,estado):
