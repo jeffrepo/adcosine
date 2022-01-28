@@ -12,3 +12,9 @@ class hr_employee(models.Model):
     _inherit = 'hr.employee'
 
     residencia_letras = fields.Char('Residencia Letras contrato')
+
+class hr_contract(models.Model):
+    _inherit = 'hr.contract'
+
+    puesto_contrato = fields.Char('Puesto de contrato')
+    vigencia_letras = fields.char('Vigencia letras')

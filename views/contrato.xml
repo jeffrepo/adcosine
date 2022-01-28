@@ -30,12 +30,12 @@
                                 <strong><u>NOSOTROS:</u></strong> Por una parte <strong><u><span t-esc="o.company_id.nombre_encargado"/></u></strong>, de <span t-esc="edad_l"/> años de edad, <span t-esc="o.company_id.estado_civil_encargado"/>, guatemalteco.
                                  Empresario, de este domicilio y vecino del Municipio de <span t-esc="o.company_id.direccion_encargado"/>, me identifico con el Documento Personal de
                                 Identificación con Código Único de Identificación número (<span t-esc="o.company_id.dpi_encargado"/>)
-                                extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de Gerente General y Representante Legal de la entidad
+                                extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de <span t-esc="o.calidad_de"/> de la entidad
                                 <strong><u><span t-esc="o.company_id.name"/></u></strong>,
                                 <t t-if="o.company_id.colegio">
                                   ubicada en
                                   <t if="o.company_id.direccion_letras">
-                                    la sexta calle uno guion sesenta y cinco zona uno de Boca del Monte, Villa Canales
+                                    <span t-esc="o.company_id.direccion_letras"/>
 
                                   </t>
                                 </t>
@@ -47,32 +47,67 @@
                                 </t>
                                  y por la otra parte, <strong><u><span t-esc="o.employee_id.name"/></u></strong> de <span t-esc="edad_empleado_l"/>
                                 de edad, <span t-esc="estado_civil_empleado"/>, con residencia en <span t-esc="o.employee_id.residencia_letras"/>,me identifico con el Documento Personal de Identificación
-                                con Código Único de Identificación número <span t-esc="dpi_empleado_l"/> extendido por el Registro Nacional de las Personas de la República de Guatemala; Quienes en lo
+                                con Código Único de Identificación número(<span t-esc="o.employee_id.identification_id"/>) <span t-esc="dpi_empleado_l"/> extendido por el Registro Nacional de las Personas de la República de Guatemala; Quienes en lo
                                 sucesivo nos denominaremos, como <strong><u>“EMPLEADOR”</u></strong> y <strong><u>“TRABAJADOR”</u></strong>, respectivamente, consentimos en celebrar el presente
                                  <strong><u>CONTRATO INDIVIDUAL DE TRABAJO</u></strong>, contenido en las siguientes cláusulas: <strong><u>PRIMERA: DE LA RELACIÓN DE TRABAJO:</u></strong> La relación de trabajo se inicia
-                                 el <span t-esc="fecha_contrato_letras['dia_letras']"/> de <span t-esc="fecha_contrato_letras['mes_letras']"/> del <span t-esc="fecha_contrato_letras['anio_letras']"/>
-                                 <strong><u>SEGUNDA: </u></strong> El TRABAJADOR ocupará el puesto de: <strong><u><span t-esc="o.job_id.name"/></u></strong>, y le corresponde prestar los servicios
+                                 el <span t-esc="fecha_contrato_letras['dia_letras']"/> de <span t-esc="fecha_contrato_letras['mes_letras']"/> del <span t-esc="fecha_contrato_letras['anio_letras']"/>, con vigencia de <span t-esc="o.vigencia_letras"/>
+
+
+                                 <strong><u>SEGUNDA: </u></strong>
+                                 <t t-esc="o.company_id.colegio">
+                                    DE LOS SERVICIOS Y RESPONSABILIDAD DEL TRABAJADOR:
+
+
+                                 </t>
+                                 El TRABAJADOR ocupará el puesto de: <strong><u><span t-esc="o.puesto_contrato"/></u></strong>,
+
+                                 <t tif="o.company_id.colegio">
+                                   <strong>AL TRABAJADOR</strong> le corresponde prestar los servicios inherentes a su cargo de docente, desempeñará las funciones de manera enunciativa y no limitativa, cuyas actividades
+                                   se relacionen directa o indirectamente con su naturaleza, características y condiciones de su puesto de impartir enseñanza, y cualquier actividad que la Institución Educativa solicite su apoyo.
+
+                                 </>
+
+
+                                  <t t-if="o.company_id.colegio== False">
+                                    y le corresponde prestar los servicios
                                   inherentes al cargo, y por el puesto que ocupará, se le considerará de conformidad con el Código de Trabajo como Empleada de Confianza, cuyas funciones podrán variar
                                   según las necesidades del proyecto y que, de manera enunciativa y no limitativa, son los siguientes:
+                                 </t>
                             </p>
-                            <p style="text-align:justify;font-size:14pt;"><strong>ATRIBUCIONES: </strong></p>
-                            <p style="padding-left:1cm;font-size:14pt;">
-                              <t t-if="o.notes">
-                                  <span t-field="o.notes"/>
-                              </t>
-                              <t t-else="">
-                                  <span t-field="o.job_id.description"/>
-                              </t>
-                            </p>
+                            <t if="o.company_id.colegio == False">
+                            </t>
+
+
+                            <t if="o.company_id.colegio == False">
+                                <p style="text-align:justify;font-size:14pt;"><strong>ATRIBUCIONES: </strong></p>
+                                <p style="padding-left:1cm;font-size:14pt;">
+                                  <t t-if="o.notes">
+                                      <span t-field="o.notes"/>
+                                  </t>
+                                  <t t-else="">
+                                      <span t-field="o.job_id.description"/>
+                                  </t>
+                                </p>
+                                <p style="text-align:justify;font-size:14pt;">
+                                  El TRABAJADOR cumplirá con las obligaciones propias de su cargo, las establecidas en el Código de Trabajo, el Reglamento Interior de Trabajo y demás disposiciones legales y reglamentarias de la materia.
+                                  Dentro de las responsabilidades del TRABAJADOR se encuentran la adecuada planificación de sus actividades para asegurar la terminación efectiva de las tareas diarias.  Asimismo, de forma especial se conviene que el TRABAJADOR será
+                                  responsable de la observancia de las medidas de seguridad en el trabajo establecidas en las políticas de la entidad, así como del uso y cuidado del equipo, herramienta, productos y cualquier otro material que le sea entregado para desempeñar sus funciones, asimismo,  se conviene que, el TRABAJADOR será responsable por las sumas de dinero y/o producto a que tenga acceso por virtud de su cargo, correspondiéndole responder por cualquier faltante.
+                                  EL TRABAJADOR puede ser trasladada de un puesto a otro de la misma índole, rama o categoría, sin que esto constituya despido indirecto, siempre y cuando las condiciones de la prestación de servicios y necesidades de la
+                                  entidad así lo requieran.
+                                </p>
+
+                            </t>
+
                             <p style="text-align:justify;font-size:14pt;">
-                              El TRABAJADOR cumplirá con las obligaciones propias de su cargo, las establecidas en el Código de Trabajo, el Reglamento Interior de Trabajo y demás disposiciones legales y reglamentarias de la materia.
-                              Dentro de las responsabilidades del TRABAJADOR se encuentran la adecuada planificación de sus actividades para asegurar la terminación efectiva de las tareas diarias.  Asimismo, de forma especial se conviene que el TRABAJADOR será
-                              responsable de la observancia de las medidas de seguridad en el trabajo establecidas en las políticas de la entidad, así como del uso y cuidado del equipo, herramienta, productos y cualquier otro material que le sea entregado para desempeñar sus funciones, asimismo,  se conviene que, el TRABAJADOR será responsable por las sumas de dinero y/o producto a que tenga acceso por virtud de su cargo, correspondiéndole responder por cualquier faltante.
-                            </p>
-                            <p style="text-align:justify;font-size:14pt;">
-                              EL TRABAJADOR puede ser trasladada de un puesto a otro de la misma índole, rama o categoría, sin que esto constituya despido indirecto, siempre y cuando las condiciones de la prestación de servicios y necesidades de la
-                              entidad así lo requieran. <strong><u>TERCERA: DEL LUGAR DE PRESTACIÓN DE LOS SERVICIOS: </u></strong> Los servicios serán prestados en la sexta avenida catorce guion cincuenta y cinco zona uno, Departamento de Guatemala, o en sus  diferentes tiendas o sucursales, cuya ubicación es de conocimiento del trabajador o en cualquiera lugar que
-                              indique el patrono.  <strong><u>CUARTA: PLAZO DEL CONTRATO: </u></strong> La duración del presente contrato es por tiempo indefinido.  <strong><u>QUINTA: JORNADA DE TRABAJO: </u></strong> La trabajadora no se encuentra sujeto a las limitaciones de la jornada de trabajo, de conformidad con el artículo 124, literales a), y, b), respectivamente del Código de Trabajo. Por lo que laborará
+                               <strong><u>TERCERA: DEL LUGAR DE PRESTACIÓN DE LOS SERVICIOS: </u></strong> Los servicios serán prestados en
+
+                               <t if="o.company_id.direccion_letras">
+                                 <span t-esc="o.company_id.direccion_letras"/>
+
+                               </t>
+
+                               , o en sus  diferentes tiendas o sucursales, cuya ubicación es de conocimiento del trabajador o en cualquiera lugar que
+                              indique el patrono.  <strong><u>CUARTA: PLAZO DEL CONTRATO: </u></strong> La duración del presente contrato es por tiempo ** Agregar campo seleccion definio o in deindefinido**.  <strong><u>QUINTA: JORNADA DE TRABAJO: </u></strong> La trabajadora no se encuentra sujeto a las limitaciones de la jornada de trabajo, de conformidad con el artículo 124, literales a), y, b), respectivamente del Código de Trabajo. Por lo que laborará
                               turnos de doce horas diarias, en jornada Mixta de las nueve horas, a las veinte horas, según la programación que establezca el patrono y que le será notificada con anticipación. Es entendido que de conformidad con dicho articulo, la jornada de este no puede exceder de un total de doce horas diarias.
                             </p>
                             <p style="text-align:justify;font-size:14pt;">

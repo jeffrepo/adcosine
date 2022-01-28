@@ -19,6 +19,7 @@
                           <field name="colegio"/>
                           <field name="direccion_letras"/>
                           <field name="nombre_encargado"/>
+                          <field name="calidad_de"/>
                           <field name="edad_encargado"/>
                           <field name="estado_civil_encargado"/>
                           <field name="dpi_encargado"/>

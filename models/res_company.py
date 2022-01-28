@@ -11,6 +11,7 @@ class res_company(models.Model):
     libro = fields.Char('Libro')
     nombre_notario = fields.Char('Nombre notario')
     # SI es colegio otro formato
+    calidad_de = fields.Char("En calidad de")
     colegio = fields.Boolean('Colegio')
     direccion_letras = fields.Char('Direccion letras')
     nombre_encargado = fields.Char('Nombre encargado')
