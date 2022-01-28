@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="page">
-                        <t t-set="edad_l" t-value="edad_letras(o.company_id.encargado_contrato_id.edad)"/>
+                        <t t-set="edad_l" t-value="edad_letras(o.company_id.edad_encargado)"/>
                         <t t-set="edad_empleado_l" t-value="edad_letras(o.employee_id.edad)"/>
                         <t t-set="estado_civil_encargado" t-value="estado_civil(o.employee_id.marital)"/>
                         <t t-set="sueldo_letras" t-value="sueldo_a_letras(o.wage)"/>
@@ -27,7 +27,7 @@
 
                         <div class="centro" style="margin: 0 auto;">
                             <p style="text-align:justify;font-size:14pt;">
-                                <strong><u>NOSOTROS:</u></strong> Por una parte <strong><u><span t-esc="o.company_id.nombre_encargado"/></u></strong>, de <span t-esc="o.company_id.edad_encargado"/> de edad, <span t-esc="o.company_id.estado_civil_encargado"/>, guatemalteco.
+                                <strong><u>NOSOTROS:</u></strong> Por una parte <strong><u><span t-esc="o.company_id.nombre_encargado"/></u></strong>, de <span t-esc="edad_l"/> años de edad, <span t-esc="o.company_id.estado_civil_encargado"/>, guatemalteco.
                                  Empresario, de este domicilio y vecino del Municipio de <span t-esc="o.company_id.direccion_encargado"/>, me identifico con el Documento Personal de
                                 Identificación con Código Único de Identificación número (<span t-esc="o.company_id.dpi_encargado"/>)
                                 extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de Gerente General y Representante Legal de la entidad
