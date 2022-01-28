@@ -78,7 +78,7 @@
                             </t>
 
 
-                            <t if="o.company_id.colegio == False">
+                            <t t-if="o.company_id.colegio == False">
                                 <p style="text-align:justify;font-size:14pt;"><strong>ATRIBUCIONES: </strong></p>
                                 <p style="padding-left:1cm;font-size:14pt;">
                                   <t t-if="o.notes">
