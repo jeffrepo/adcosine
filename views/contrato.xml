@@ -65,7 +65,7 @@
                                    <strong>AL TRABAJADOR</strong> le corresponde prestar los servicios inherentes a su cargo de docente, desempeñará las funciones de manera enunciativa y no limitativa, cuyas actividades
                                    se relacionen directa o indirectamente con su naturaleza, características y condiciones de su puesto de impartir enseñanza, y cualquier actividad que la Institución Educativa solicite su apoyo.
 
-                                 </>
+                                 <t/>
 
 
                                   <t t-if="o.company_id.colegio== False">
