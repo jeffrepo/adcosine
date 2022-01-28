@@ -30,7 +30,7 @@
                                 <strong><u>NOSOTROS:</u></strong> Por una parte <strong><u><span t-esc="o.company_id.nombre_encargado"/></u></strong>, de <span t-esc="edad_l"/> años de edad, <span t-esc="o.company_id.estado_civil_encargado"/>, guatemalteco.
                                  Empresario, de este domicilio y vecino del Municipio de <span t-esc="o.company_id.direccion_encargado"/>, me identifico con el Documento Personal de
                                 Identificación con Código Único de Identificación número (<span t-esc="o.company_id.dpi_encargado"/>)
-                                extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de <span t-esc="o.calidad_de"/> de la entidad
+                                extendido por el Registro Nacional de las Personas de la República de Guatemala, actuando en mi calidad de <span t-esc="o.company_id.calidad_de"/> de la entidad
                                 <strong><u><span t-esc="o.company_id.name"/></u></strong>,
                                 <t t-if="o.company_id.colegio">
                                   ubicada en
