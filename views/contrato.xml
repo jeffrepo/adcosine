@@ -88,7 +88,7 @@
                                 Código de Trabajo. <strong><u>OCTAVA:</u></strong> Es entendido que de conformidad con el artículo 122 del Código de Trabajo, la jornada ordinaria y extraordinaria no puede exceder de una suma total de doce horas diarias.
 
                                   <t t-if="o.company_id.colegio">
-                                    <strong>NOVENA: DE LA TERMINACIÓN DEL CONTRATO:</strong>
+                                    <strong><u>NOVENA: DE LA TERMINACIÓN DEL CONTRATO:</u></strong>
                                     De conformidad con lo dispuesto en el Capítulo VIII, Título II del Código de Trabajo, el presente contrato se tendrá por terminado en virtud de las siguientes causas: a) mutuo consentimiento; b) renuncia; c) despido, el cual, a su vez, puede ser directo, con o sin causa justificada; y d) las demás formas dispuestas en la ley.
                                     <strong>DÉCIMA:</strong> El presente contrato individual de trabajo se suscribe en <span t-fiel="o.company_id.direccion_letras"/> el <span t-esc="fecha_l"/>.
                                   </t>
