@@ -54,7 +54,7 @@
 
 
                                  <strong><u>SEGUNDA: </u></strong>
-                                 <t t-esc="o.company_id.colegio">
+                                 <t t-if="o.company_id.colegio">
                                     DE LOS SERVICIOS Y RESPONSABILIDAD DEL TRABAJADOR:
 
 
